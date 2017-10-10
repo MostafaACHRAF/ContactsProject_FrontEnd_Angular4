@@ -1,0 +1,47 @@
+<div class="container spacer">
+  <div class="panel panel-primary" *ngIf="mode==1">
+    <div class="panel-heading">New Contact</div>
+    <div class="panel-body">
+      <div class="form-group">
+        <label class="control-label">Nom</label>
+        <input class="form-control" type="text" [(ngModel)]="contact.nom" />
+
+        <label class="control-label">Prenom</label>
+        <input type="text" class="form-control" [(ngModel)]="contact.prenom" />
+
+        <label class="control-label">Email</label>
+        <input type="text" class="form-control" [(ngModel)]="contact.email" />
+
+        <label class="control-label">Date Naissance</label>
+        <input type="date" class="form-control" [(ngModel)]="contact.dateNaissance" />
+
+        <label class="control-label">Tel</label>
+        <input type="text" class="form-control" [(ngModel)]="contact.tel" />
+
+        <button class="btn btn-primary" (click)="saveContact()">Save</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel panel-primary" *ngIf="mode==2">
+    <div class="panel-heading">Contact</div>
+    <div class="panel-body">
+      <div class="form-group">
+
+        <label class="control-label form-group">Id: {{contact.id}}</label><br/><br />
+
+        <label class="control-label form-group">Nom: {{contact.nom}}</label><br/><br />
+
+        <label class="control-label">Prenom: {{contact.prenom}}</label><br/><br />
+
+        <label class="control-label">Email: {{contact.email}}</label><br/><br />
+
+        <label class="control-label">Date Naissance: {{contact.dateNaissance}}</label><br/><br />
+
+        <label class="control-label">Tel: {{contact.tel}}</label><br/><br />
+
+        <button class="btn btn-primary" (click)="mode=1">New Contact</button>
+      </div>
+    </div>
+  </div>
+</div>
